@@ -1,0 +1,38 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+import "google/protobuf/wrappers.proto";
+option java_multiple_files = true;
+package e2log.configrpc;
+
+service ConfigrpcService {
+    rpc findString( FindStringRequest ) returns ( FindStringResponse ) {}
+    rpc findObject( FindObjectRequest ) returns ( FindObjectResponse ) {}
+}
+
+message FindStringRequest{
+    string key = 1;
+    google.protobuf.StringValue jsonPath = 2;
+}
+
+message FindStringResponse{
+    KeyString kv = 1;
+}
+
+message KeyString {
+    string key = 1;
+    string value = 2;
+}
+
+message FindObjectRequest{
+    string key = 1;
+    optional string jsonPath = 2;
+}
+
+message FindObjectResponse{
+    KeyObject kv = 1;
+}
+
+message KeyObject{
+    string key = 1;
+    google.protobuf.Any value = 2;
+}
