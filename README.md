@@ -4,7 +4,7 @@ The gRPC API for ConfigRPC server
 This a [gRpc](https://grpc.io/docs/guides/) interface to integrate with Configrpc gRPC Service
 
 ![Architecture](grpc-interface.svg)
-<img src="./grpc-interface.svg">
+
 ### How do I get set up? ###
 
 Note: this project uses Google protocol buffers:
